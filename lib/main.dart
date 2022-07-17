@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }*/
+  void opneUrl() async {
+    Uri url = Uri.parse('https://geniepi-hiroba.com/');
+    if (await canLaunchUrl(url)) {
+      //mode: LaunchMode.externalApplicationにするとアプリ内ではなくブラウザを起動して表示するようにできる
+      await launchUrl(url);
+    } else {
+      throw 'このURLにはアクセスできません';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +65,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(8.0),
+              color: Theme.of(context).primaryColor,
+              child: SizedBox(
               width: double.infinity,
               height: 100,
-              color: Theme.of(context).primaryColor,
-              child: const Text('''
+                  child: ElevatedButton(
+                    onPressed: opneUrl,
+                    child: const Text(
+                  '''
 ONLINE SHOP
 オンラインショップ
-                ''', textAlign: TextAlign.center,),
+                ''',
+                  textAlign: TextAlign.center,
+                ),
+               ),
+              ),
             ),
             Table(
               children: [
