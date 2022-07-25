@@ -42,22 +42,6 @@ ONLINE SHOP
           ),
         ),
       ),
-      /*Expanded(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                        child: Container(
-                            alignment: Alignment.center,
-                            color: Theme.of(context).primaryColor,
-                            child: Text("green"))),
-                    Expanded(
-                        child: Container(
-                            alignment: Alignment.center,
-                            color: Theme.of(context).primaryColor,
-                            child: Text("green"))),
-                  ],
-                ))*/
       Expanded(
           child: Row(
         children: [

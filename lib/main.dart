@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter_application/home.dart';
+import 'package:test_flutter_application/mypage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -35,7 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
   // 表示する Widget の一覧
   static final List<Widget> _pageList = [
     const Home(),
-    const Text("2tab")
+    const Text("2tab"),
+    const Text("2tab"),
+    const Mypage()
   ];
 
   void opneUrl() async {
